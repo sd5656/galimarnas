@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFG Kurdish - تەکنەلۆجیا و زانیاری</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- پەردەی تەمەن -->
+    <div id="ageVerification" class="age-verification">
+        <div class="age-modal">
+            <h3>پەسەندکردنی تەمەن</h3>
+            <p>تکایە تەمەنی خۆت بنووسە بۆ چوونە ناو ماڵپەڕەکە:</p>
+            <input type="number" id="ageInput" placeholder="تەمەنی تۆ" min="1" max="120">
+            <button id="verifyAge">پەسەندکردن</button>
+            <p id="ageError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- پەردەی زمان -->
+    <div id="languageSelector" class="language-selector">
+        <div class="language-modal">
+            <h3>هەڵبژاردنی زمان</h3>
+            <div class="language-options">
+                <button data-lang="ckb" class="lang-btn active">کوردی سۆرانی</button>
+                <button data-lang="sdh" class="lang-btn">کوردی بادینی</button>
+                <button data-lang="en" class="lang-btn">English</button>
+                <button data-lang="fa" class="lang-btn">فارسی</button>
+                <button data-lang="ar" class="lang-btn">العربية</button>
+            </div>
+            <button id="confirmLanguage">دەستپێکردن</button>
+        </div>
+    </div>
+
+    <!-- مینۆی سەرەوە -->
+    <div class="top-menu">
+        <div class="top-menu-container">
+            <div class="language-switcher">
+                <button id="currentLang">کوردی سۆرانی <i class="fas fa-chevron-down"></i></button>
+                <div class="language-dropdown">
+                    <button data-lang="ckb">کوردی سۆرانی</button>
+                    <button data-lang="sdh">کوردی بادینی</button>
+                    <button data-lang="en">English</button>
+                    <button data-lang="fa">فارسی</button>
+                    <button data-lang="ar">العربية</button>
+                </div>
+            </div>
+            <ul class="top-menu-links">
+                <li><a href="#"><i class="fas fa-envelope"></i> info@efgkurdish.com</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i> ٠٧٥٠ ١٢٣ ٤٥٦٧</a></li>
+            </ul>
+            <div class="theme-switcher" id="themeSwitcher">
+                <i class="fas fa-moon"></i>
+                <span>ڕوناکی</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">EFG Kurdish</div>
+            <ul class="nav-links">
+                <li><a href="#" data-i18n="home">سەرەکی</a></li>
+                <li><a href="#" data-i18n="technology">تەکنەلۆجیا</a></li>
+                <li><a href="#" data-i18n="programming">پڕۆگرامسازی</a></li>
+                <li><a href="#" data-i18n="blog">بلاگ</a></li>
+                <li><a href="#" data-i18n="about">دەربارەی ئێمە</a></li>
+                <li><a href="#" data-i18n="contact">پەیوەندی</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+
+    <!-- مینۆی کشاوە -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h3 data-i18n="menu">مینۆ</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="#" data-i18n="home">سەرەکی</a></li>
+            <li><a href="#" data-i18n="technology">تەکنەلۆجیا</a></li>
+            <li><a href="#" data-i18n="programming">پڕۆگرامسازی</a></li>
+            <li><a href="#" data-i18n="blog">بلاگ</a></li>
+            <li><a href="#" data-i18n="about">دەربارەی ئێمە</a></li>
+            <li><a href="#" data-i18n="contact">پەیوەندی</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <main>
+        <section class="hero">
+            <h1 data-i18n="welcome">بەخێربێن بۆ EFG Kurdish</h1>
+            <p data-i18n="welcomeSub">ماڵپەڕی تەکنەلۆجیا و زانیاری</p>
+        </section>
+
+        <section class="news">
+            <h2 data-i18n="news">هەواڵەکان</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- پۆستەکان لێرە زیاد دەکرێن -->
+            </div>
+
+            <!-- پۆستە زۆر بینراوەکان -->
+            <div class="popular-posts">
+                <h3 data-i18n="popularPosts">پۆستە زۆر بینراوەکان</h3>
+                <div class="popular-grid" id="popularGrid">
+                    <!-- پۆستە زۆر بینراوەکان لێرە زیاد دەکرێن -->
+                </div>
+            </div>
+
+            <!-- بەشی Share to Social Media -->
+            <div class="share-section">
+                <h3 data-i18n="shareSocial">هاوبەشی بکە لە کۆمەڵەی میدیایی</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span data-i18n="facebook">فیسبوک</span>
+                    </a>
+                    <a href="#" class="share-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span data-i18n="twitter">تویتەر</span>
+                    </a>
+                    <a href="#" class="share-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span data-i18n="linkedin">لینکدئین</span>
+                    </a>
+                    <a href="#" class="share-btn telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span data-i18n="telegram">تێلێگرام</span>
+                    </a>
+                    <a href="#" class="share-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-i18n="whatsapp">واتسئاپ</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- بەشی We Are in Social Media -->
+            <div class="social-media-section">
+                <h3 data-i18n="weAreSocial">ئێمە لە کۆمەڵەی میدیاییداین</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <div class="icon-circle facebook-bg">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <span data-i18n="facebook">فیسبوک</span>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="icon-circle twitter-bg">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <span data-i18n="twitter">تویتەر</span>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="icon-circle youtube-bg">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <span data-i18n="youtube">یوتیوب</span>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="icon-circle instagram-bg">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span data-i18n="instagram">ئینستاگرام</span>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <div class="icon-circle telegram-bg">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <span data-i18n="telegram">تێلێگرام</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 EFG Kurdish. <span data-i18n="allRightsReserved">هەموو مافەکان پارێزراون</span>.</p>
+    </footer>
+
+    <!-- مۆدالی بینینی پۆست -->
+    <div id="postModal" class="post-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h2 id="postTitle"></h2>
+                <div class="post-meta">
+                    <span id="postDate"></span>
+                    <span id="postViews"></span>
+                    <span id="postAuthor"></span>
+                </div>
+                <div id="postContent" class="post-content"></div>
+                <div class="post-actions">
+                    <button class="like-btn" id="likeBtn">
+                        <i class="far fa-heart"></i>
+                        <span data-i18n="like">حەز</span>
+                        <span id="likeCount">0</span>
+                    </button>
+                    <div class="share-post-buttons">
+                        <button class="share-post-btn" data-platform="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="share-post-btn" data-platform="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="share-post-btn" data-platform="telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </button>
+                        <button class="share-post-btn" data-platform="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
